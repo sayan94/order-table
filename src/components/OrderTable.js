@@ -33,59 +33,31 @@ class OrderTable extends Component{
          }
 
      };
-    // handleInputChange = (event)=>{
-    //     const name =event.target.name;
-    //         const value = event.target.value;
-    //
-    //         if(name === 'item'){
-    //             const newData = {
-    //                 [value]:{
-    //                     qty:0,
-    //                     price:0
-    //                 }
-    //             }
-    //             // this.setState({items: this.state.items.push(newData)});
-    //         }else{
-    //             // this.setState(items.[name])
-    //         }
-    //
-    //
-    //
-    //
-    // };
-    handleKeyPress(event){
-        event.preventDefault();
-        document.getElementById("test").submit();
-        // if(event.key === 'Enter'){
-        //     event.preventDefault();
-        //     // this.handleSubmit();
-        //     // const a = this._inputItem.value;
-        //      console.log('a');
-        //
-        // }
+    tableStyle = {
+        border: '1px solid black',
+        width:'132px'
     }
-
     render(){
         return(
-            <div>
+            <div >
                 <table>
                     <tbody>
                         <tr>
-                            <td>Customer Name</td>
-                            <td></td>
-                            <td>Kiran</td>
+                            <td style={this.tableStyle}>Customer Name</td>
+                            <td style={this.tableStyle}></td>
+                            <td style={this.tableStyle}>Kiran</td>
                         </tr>
                         {this.state.rows.map((r)=>(
                             <tr key={r.price}>
-                                <td>{r.item}</td>
-                                <td>{r.qty}</td>
-                                <td>{r.price}</td>
+                                <td style={this.tableStyle}>{r.item}</td>
+                                <td style={this.tableStyle}>{r.qty}</td>
+                                <td style={this.tableStyle}>{r.price}</td>
                             </tr>
                         ))}
                         <tr>
-                            <td>Grand Total</td>
-                            <td></td>
-                            <td>{this.state.totalPrice}</td>
+                            <td style={this.tableStyle}>Grand Total</td>
+                            <td style={this.tableStyle}></td>
+                            <td style={this.tableStyle}>{this.state.totalPrice}</td>
                         </tr>
                     </tbody>
 
