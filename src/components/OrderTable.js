@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import styles from './style.css';
 // import inputRow from './inputRow';
 
 class OrderTable extends Component{
@@ -43,21 +44,21 @@ class OrderTable extends Component{
                 <table>
                     <tbody>
                         <tr>
-                            <td style={this.tableStyle}>Customer Name</td>
-                            <td style={this.tableStyle}></td>
-                            <td style={this.tableStyle}>Kiran</td>
+                            <td className="bold" >Customer Name</td>
+                            <td></td>
+                            <td>Kiran</td>
                         </tr>
                         {this.state.rows.map((r)=>(
                             <tr key={r.price}>
-                                <td style={this.tableStyle}>{r.item}</td>
-                                <td style={this.tableStyle}>{r.qty}</td>
-                                <td style={this.tableStyle}>{r.price}</td>
+                                <td>{r.item}</td>
+                                <td>{r.qty} Kg</td>
+                                <td>{r.price} Rs per Kg</td>
                             </tr>
                         ))}
                         <tr>
-                            <td style={this.tableStyle}>Grand Total</td>
-                            <td style={this.tableStyle}></td>
-                            <td style={this.tableStyle}>{this.state.totalPrice}</td>
+                            <td className="bold">Grand Total</td>
+                            <td></td>
+                            <td>{this.state.totalPrice}Rs</td>
                         </tr>
                     </tbody>
 
